@@ -1,0 +1,287 @@
+.performances {
+  padding: 80px 4vw 120px;
+  background: #090909;
+  color: #f4f1eb;
+}
+
+/* LABEL */
+
+.performances__label {
+  margin-bottom: 55px;
+
+  font-family: Arial, Helvetica, sans-serif;
+  font-size: 11px;
+  line-height: 1;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+  color: #f4f1eb;
+}
+
+/* HEADING */
+
+.performances__heading {
+  margin-bottom: 75px;
+
+  display: grid;
+  grid-template-columns: minmax(0, 1.6fr) minmax(260px, 0.4fr);
+  gap: 5vw;
+  align-items: end;
+}
+
+.performances__title {
+  margin: 0;
+
+  font-family: Georgia, "Times New Roman", serif;
+  font-size: clamp(72px, 9vw, 165px);
+  font-weight: 400;
+  line-height: 0.82;
+  letter-spacing: -0.06em;
+  color: #f4f1eb;
+}
+
+.performances__title span {
+  display: block;
+}
+
+.performances__intro {
+  max-width: 360px;
+  margin: 0 0 8px;
+
+  font-family: Arial, Helvetica, sans-serif;
+  font-size: 14px;
+  line-height: 1.6;
+  color: rgba(244, 241, 235, 0.68);
+}
+
+/* THREE SHOWS */
+
+.performances__shows {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 12px;
+}
+
+.performance-card__media {
+  width: 100%;
+  aspect-ratio: 3 / 4;
+  overflow: hidden;
+  background: #2b2927;
+}
+
+.performance-card__media img {
+  width: 100%;
+  height: 100%;
+  display: block;
+
+  object-fit: cover;
+  object-position: center;
+}
+
+.performance-card__info {
+  margin-top: 18px;
+
+  display: flex;
+  align-items: baseline;
+  gap: 14px;
+}
+
+.performance-card__number {
+  font-family: Arial, Helvetica, sans-serif;
+  font-size: 10px;
+  letter-spacing: 0.12em;
+  color: rgba(244, 241, 235, 0.42);
+}
+
+.performance-card__info h3 {
+  margin: 0;
+
+  font-family: Georgia, "Times New Roman", serif;
+  font-size: clamp(28px, 2.4vw, 42px);
+  font-weight: 400;
+  line-height: 1;
+  letter-spacing: -0.035em;
+  color: #f4f1eb;
+}
+
+.performance-card__text {
+  max-width: 340px;
+  margin: 14px 0 0 34px;
+
+  font-family: Arial, Helvetica, sans-serif;
+  font-size: 12px;
+  line-height: 1.55;
+  color: rgba(244, 241, 235, 0.62);
+}
+
+/* CHOREOGRAPHY */
+
+.choreography {
+  margin-top: 110px;
+  padding-top: 35px;
+
+  display: grid;
+  grid-template-columns: minmax(0, 1.55fr) minmax(300px, 0.65fr);
+  gap: 5vw;
+
+  border-top: 1px solid rgba(244, 241, 235, 0.2);
+}
+
+.choreography__media {
+  width: 100%;
+  aspect-ratio: 16 / 9;
+  overflow: hidden;
+  background: #2b2927;
+}
+
+.choreography__media img {
+  width: 100%;
+  height: 100%;
+  display: block;
+
+  object-fit: cover;
+  object-position: center;
+}
+
+.choreography__content {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+}
+
+.choreography__heading {
+  display: flex;
+  align-items: baseline;
+  gap: 14px;
+}
+
+.choreography__number {
+  font-family: Arial, Helvetica, sans-serif;
+  font-size: 10px;
+  letter-spacing: 0.12em;
+  color: rgba(244, 241, 235, 0.42);
+}
+
+.choreography__heading h3 {
+  margin: 0;
+
+  font-family: Georgia, "Times New Roman", serif;
+  font-size: clamp(42px, 5vw, 82px);
+  font-weight: 400;
+  line-height: 0.95;
+  letter-spacing: -0.05em;
+  color: #f4f1eb;
+}
+
+.choreography__content p {
+  max-width: 400px;
+  margin: 30px 0 0;
+
+  font-family: Arial, Helvetica, sans-serif;
+  font-size: 14px;
+  line-height: 1.65;
+  color: rgba(244, 241, 235, 0.68);
+}
+
+.choreography__link {
+  margin-top: auto;
+  padding-top: 45px;
+  padding-bottom: 4px;
+
+  border-bottom: 1px solid currentColor;
+
+  font-family: Arial, Helvetica, sans-serif;
+  font-size: 10px;
+  line-height: 1;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+  color: #f4f1eb;
+}
+
+/* TABLET */
+
+@media (max-width: 900px) {
+  .performances {
+    padding: 65px 5vw 90px;
+  }
+
+  .performances__heading {
+    grid-template-columns: 1fr;
+    gap: 30px;
+    margin-bottom: 55px;
+  }
+
+  .performances__title {
+    font-size: clamp(62px, 12vw, 110px);
+  }
+
+  .performances__shows {
+    grid-template-columns: 1fr 1fr;
+    gap: 45px 12px;
+  }
+
+  .choreography {
+    margin-top: 85px;
+    grid-template-columns: 1fr;
+    gap: 35px;
+  }
+
+  .choreography__content p {
+    max-width: 600px;
+  }
+
+  .choreography__link {
+    margin-top: 35px;
+    padding-top: 0;
+  }
+}
+
+/* MOBILE */
+
+@media (max-width: 600px) {
+  .performances {
+    padding: 50px 5vw 70px;
+  }
+
+  .performances__label {
+    margin-bottom: 35px;
+  }
+
+  .performances__heading {
+    margin-bottom: 45px;
+  }
+
+  .performances__title {
+    font-size: clamp(54px, 16vw, 88px);
+    line-height: 0.86;
+  }
+
+  .performances__intro {
+    font-size: 13px;
+  }
+
+  .performances__shows {
+    grid-template-columns: 1fr;
+    gap: 50px;
+  }
+
+  .performance-card__text {
+    margin-left: 34px;
+  }
+
+  .choreography {
+    margin-top: 70px;
+    padding-top: 25px;
+  }
+
+  .choreography__media {
+    aspect-ratio: 4 / 3;
+  }
+
+  .choreography__heading h3 {
+    font-size: 48px;
+  }
+
+  .choreography__content p {
+    font-size: 13px;
+  }
+}

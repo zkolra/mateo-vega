@@ -1,0 +1,36 @@
+.camp-experience {
+  padding: 120px 5vw;
+  background: #eee9df;
+  color: #191919;
+}
+
+.camp-experience__intro {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  margin-bottom: 100px;
+}
+
+.camp-experience__intro p {
+  max-width: 550px;
+  font-size: 28px;
+  line-height: 1.3;
+}
+
+.camp-experience__gallery {
+  display: grid;
+  grid-template-columns: 1.2fr 0.8fr;
+  grid-template-rows: 400px 500px;
+  gap: 20px;
+}
+
+.camp-experience__item {
+  background: #cbc2b1;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+}
+
+.camp-experience__item--one {
+  grid-row: 1 / 3;
+}
