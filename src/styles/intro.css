@@ -1,5 +1,5 @@
 .intro {
-  padding: clamp(70px, 9vw, 140px) var(--pad);
+  padding: clamp(70px, 9vw, 140px) var(--pad) clamp(40px, 5vw, 70px);
 }
 
 .intro__title {
@@ -13,16 +13,15 @@
 
 .intro__grid {
   display: grid;
-  grid-template-columns: 0.85fr 1fr;
-  gap: clamp(30px, 6vw, 100px);
-  align-items: end;
+  grid-template-columns: 1.45fr 1fr;
+  gap: clamp(30px, 4vw, 70px);
+  align-items: center;
   margin-top: clamp(50px, 6vw, 90px);
 }
 
 .intro__media {
   overflow: hidden;
-  aspect-ratio: 4 / 5;
-  max-height: 86vh;
+  aspect-ratio: 16 / 10;
   border-radius: 6px;
 }
 
@@ -30,6 +29,7 @@
   width: 100%;
   height: 100%;
   object-fit: cover;
+  object-position: 75% 30%;
 }
 
 .intro__copy {

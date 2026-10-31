@@ -1,5 +1,5 @@
 .dates {
-  padding: clamp(80px, 10vw, 150px) var(--pad);
+  padding: clamp(80px, 10vw, 150px) var(--pad) clamp(40px, 5vw, 70px);
 }
 
 .dates__head {
@@ -28,6 +28,7 @@
 
 .dates__grid {
   display: grid;
+  align-items: stretch; /* фото ровно по высоте списка дат */
   grid-template-columns: 1.5fr 1fr;
   gap: clamp(30px, 5vw, 80px);
   margin-top: clamp(40px, 6vw, 80px);
@@ -121,15 +122,14 @@
 }
 
 .dates__photo {
-  position: sticky;
-  top: 110px;
+  position: relative;
+  height: 100%;
   overflow: hidden;
   border-radius: 6px;
-  aspect-ratio: 3 / 4;
 }
 
 .dates__photo img {
-  object-position: 70% 50%;
+  object-position: 50% 30%;
 }
 
 .dates__photo img {
@@ -179,8 +179,7 @@
   }
 
   .dates__photo {
-    position: relative;
-    top: 0;
-    aspect-ratio: 4 / 5;
+    height: auto;
+    aspect-ratio: 1 / 1;
   }
 }

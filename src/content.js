@@ -68,7 +68,7 @@ export const marquee = ["Salsa", "Mambo", "On2", "Shines", "Partnerwork", "Music
 export const intro = {
   label: "The Artist",
   title: ["Rhythm is where", "it all starts"],
-  image: pic("artist-portrait.webp"),
+  image: pic("artist-stage.webp"),
   text: [
     "Mateo Vega is a Latin dancer, choreographer and teacher rooted in Salsa and Mambo.",
     "From international stages and festivals to regular classes and movement camps, his work connects performance, musicality and social dance.",
@@ -110,7 +110,7 @@ export const dates = {
   label: "On the road",
   title: ["Upcoming", "dates"],
   text: "Meet Mateo at festivals, congresses and dance events around the world.",
-  image: pic("artist-backstage.webp"),
+  image: pic("dates-teaching.webp"),
   items: [
     { date: "18–20 Oct", city: "Paris", country: "France", event: "Paris Mambo Weekend", type: "Shows / Workshops" },
     { date: "08–10 Nov", city: "Berlin", country: "Germany", event: "Berlin Salsa Congress", type: "Shows / Workshops" },
