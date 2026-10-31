@@ -1,0 +1,138 @@
+.schedule {
+  padding: clamp(40px, 6vw, 90px) var(--pad) clamp(80px, 10vw, 150px);
+  border-top: 1px solid var(--line-dark);
+}
+
+.schedule__head {
+  display: flex;
+  justify-content: space-between;
+  gap: 30px;
+}
+
+.schedule__head p {
+  max-width: 340px;
+  font-size: 15px;
+  line-height: 1.55;
+  color: var(--muted-dark);
+}
+
+.schedule__title {
+  margin-top: 30px;
+  font-size: clamp(60px, 8.5vw, 160px);
+}
+
+.schedule__title .split-line:nth-child(2) > span {
+  color: var(--hot);
+}
+
+.schedule__list {
+  margin-top: clamp(40px, 5vw, 70px);
+  list-style: none;
+  border-top: 1px solid var(--line-dark);
+}
+
+.slot {
+  position: relative;
+  display: grid;
+  grid-template-columns: 50px 120px 110px 1fr auto;
+  align-items: center;
+  gap: 20px;
+  padding: 20px 0;
+  border-bottom: 1px solid var(--line-dark);
+  isolation: isolate;
+  transition: color 0.35s, padding 0.5s var(--ease);
+}
+
+.slot::before {
+  content: "";
+  position: absolute;
+  inset: 0 calc(var(--pad) * -1);
+  z-index: -1;
+  background: var(--dark);
+  transform: scaleX(0);
+  transform-origin: left;
+  transition: transform 0.6s var(--ease);
+}
+
+.slot:hover {
+  color: var(--light);
+  padding-left: 16px;
+}
+
+.slot:hover::before {
+  transform: none;
+}
+
+.slot__day {
+  font-size: clamp(30px, 2.8vw, 46px);
+}
+
+.slot__time {
+  font-size: 18px;
+  font-variant-numeric: tabular-nums;
+}
+
+.slot__title {
+  font-size: clamp(28px, 2.6vw, 44px);
+}
+
+.slot__level {
+  justify-self: end;
+  opacity: 0.7;
+}
+
+/* Сегодня — красная строка */
+.slot.is-today {
+  color: var(--hot);
+}
+
+.slot.is-today .slot__level {
+  opacity: 1;
+  animation: today-blink 1.2s steps(2, start) infinite;
+}
+
+@keyframes today-blink {
+  to { opacity: 0.3; }
+}
+
+.schedule__foot {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 30px;
+  margin-top: 40px;
+}
+
+.schedule__foot p {
+  max-width: 380px;
+  font-size: 14px;
+  line-height: 1.55;
+  color: var(--muted-dark);
+}
+
+@media (max-width: 860px) {
+  .schedule__head,
+  .schedule__foot {
+    flex-direction: column;
+    align-items: flex-start;
+  }
+
+  .schedule__title {
+    font-size: 14vw;
+  }
+
+  .slot {
+    grid-template-columns: 34px 70px 1fr;
+    gap: 6px 12px;
+  }
+
+  .slot__title {
+    grid-column: 2 / -1;
+    font-size: 8vw;
+  }
+
+  .slot__level {
+    grid-column: 2 / -1;
+    justify-self: start;
+  }
+}

@@ -1,0 +1,44 @@
+.pre {
+  position: fixed;
+  inset: 0;
+  z-index: 400;
+  display: grid;
+  place-items: center;
+  overflow: hidden;
+  background: var(--night);
+  clip-path: inset(0% 0% 0% 0%);
+}
+
+.pre__flash {
+  position: absolute;
+  inset: 0;
+  background: radial-gradient(circle at 50% 50%, var(--hot), transparent 60%);
+  opacity: 0;
+}
+
+.pre__count {
+  position: absolute;
+  inset: 0;
+  display: grid;
+  place-items: center;
+}
+
+.pre__num {
+  grid-area: 1 / 1;
+  font-size: clamp(220px, 42vw, 620px);
+  color: var(--hot);
+  opacity: 0;
+}
+
+.pre__name {
+  position: relative;
+  display: flex;
+  overflow: hidden;
+  font-size: clamp(90px, 18vw, 260px);
+}
+
+.pre__meta {
+  position: absolute;
+  bottom: 30px;
+  color: var(--muted);
+}

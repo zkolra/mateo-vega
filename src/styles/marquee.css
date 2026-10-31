@@ -1,0 +1,39 @@
+.mq {
+  position: relative;
+  z-index: 2;
+  padding: 50px 0;
+  overflow: hidden;
+}
+
+.mq__band {
+  overflow: hidden;
+  padding: 14px 0 10px;
+  background: var(--hot);
+  color: var(--light);
+  transform: rotate(-3deg) scale(1.05);
+}
+
+.mq__band--light {
+  margin-top: -20px;
+  background: var(--light);
+  color: var(--night);
+  transform: rotate(2deg) scale(1.05);
+}
+
+.mq__track {
+  display: flex;
+  width: max-content;
+  font-size: clamp(40px, 5vw, 76px);
+  line-height: 1;
+}
+
+.mq__track span {
+  padding-right: 0.5em;
+  white-space: nowrap;
+}
+
+.mq__track i {
+  font-style: normal;
+  font-size: 0.5em;
+  vertical-align: middle;
+}

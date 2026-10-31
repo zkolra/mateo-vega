@@ -1,0 +1,101 @@
+.hero {
+  position: relative;
+  height: 100svh;
+  min-height: 600px;
+  overflow: hidden;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  padding: 100px var(--pad) 32px;
+}
+
+.hero__media {
+  position: absolute;
+  inset: 0;
+  overflow: hidden;
+}
+
+.hero__video {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.hero__shade {
+  position: absolute;
+  inset: 0;
+  background:
+    linear-gradient(180deg, rgba(12, 10, 11, 0.55) 0%, rgba(12, 10, 11, 0.1) 35%, rgba(12, 10, 11, 0.25) 60%, rgba(12, 10, 11, 0.92) 100%),
+    radial-gradient(ellipse at 50% 120%, rgba(255, 47, 61, 0.35), transparent 60%);
+}
+
+.hero__top {
+  position: relative;
+  display: flex;
+  justify-content: space-between;
+  gap: 20px;
+  color: var(--muted);
+}
+
+.hero__name {
+  position: relative;
+  display: grid;
+  justify-items: center;
+  font-size: clamp(110px, 21vw, 380px);
+  line-height: 0.82;
+  pointer-events: none;
+}
+
+.hero__row {
+  display: flex;
+  overflow: hidden;
+  padding-top: 0.06em;
+}
+
+.hero__row--hot {
+  color: var(--hot);
+}
+
+.hero__name .split-char i {
+  display: inline-block;
+  font-style: normal;
+  transform-origin: 50% 100%;
+}
+
+.hero__bottom {
+  position: relative;
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-end;
+  gap: 20px;
+}
+
+.hero__buttons {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 12px;
+}
+
+.hero__scroll i {
+  display: inline-block;
+  font-style: normal;
+  animation: hero-bob 1.2s ease-in-out infinite;
+}
+
+@keyframes hero-bob {
+  50% { transform: translateY(5px); }
+}
+
+@media (max-width: 760px) {
+  .hero__top span:last-child {
+    display: none;
+  }
+
+  .hero__name {
+    font-size: 30vw;
+  }
+
+  .hero__scroll {
+    display: none;
+  }
+}

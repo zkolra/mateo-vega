@@ -1,16 +1,41 @@
-# React + Vite
+# MATEO VEGA — шаблон сайта танцора / хореографа
 
-This template provides a minimal setup to get React working in Vite with HMR and some Oxlint rules.
+React + Vite, анимации на GSAP, плавная прокрутка Lenis. Тёмная сцена, огненно-красный акцент,
+узкий жирный Anton и Space Grotesk. Всё двигается в ритме: счёт «5·6·7·8», пульсирующий курсор, наклоны от скорости прокрутки.
 
-Currently, two official plugins are available:
+## Как сделать сайт для нового клиента
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react) uses [Oxc](https://oxc.rs)
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react-swc) uses [SWC](https://swc.rs/)
+1. **Имя, тексты, шоу, даты, расписание, кэмп, контакты, фото и видео** — всё в одном файле `src/content.js`.
+2. **Фото** — положите в `src/assets/` и впишите имена в `content.js`. **Видео** — в `public/videos/` (mp4).
+3. **Цвета и шрифты** — в начале `src/styles/global.css` (`--hot` — фирменный красный).
 
-## React Compiler
+Для фото кэмпа имена уже прописаны (`camp-hero.webp`, `camp-morning.webp`, `camp-circle.webp`,
+`camp-evening.webp`, `camp-portrait.webp`) — положите файлы с такими именами, пока их нет, показываются запасные.
 
-The React Compiler is not enabled on this template because of its impact on dev & build performances. To add it, see [this documentation](https://react.dev/learn/react-compiler/installation).
+## Блоки
 
-## Expanding the Oxlint configuration
+| № | Блок | Файл |
+|---|---|---|
+| 1 | Заставка: счёт «5 · 6 · 7 · 8» в такт, потом имя | `components/Preloader.jsx` |
+| 2 | Первый экран: шоурил на фоне, буквы имени «танцуют» под курсором и разъезжаются при прокрутке | `components/Hero.jsx` |
+| 3 | Бегущие ленты — быстрее и наклоннее, когда листаешь | `components/Marquee.jsx` |
+| 4 | Артист: фото открывается шторкой, цифры считаются | `components/Intro.jsx` |
+| 5 | Шоу: горизонтальная галерея, карточки наклоняются от скорости | `components/Shows.jsx` |
+| 6 | Шоурил: видео из карточки раскрывается на весь экран | `components/Showreel.jsx` |
+| 7 | Даты: города-«билеты» прокручиваются при наведении, фото наклоняется за мышью | `components/Dates.jsx` |
+| 8 | Студия: слова выпрыгивают, видео раскрывается, фото раскладываются веером | `components/Studio.jsx` |
+| 9 | Расписание: сегодняшний класс подсвечен и мигает «Today» | `components/Schedule.jsx` |
+| 10 | Кэмп: фото вырастает из окна, моменты плывут, живой обратный отсчёт | `components/Camp.jsx` |
+| 11 | Бронирование: выбор темы «чипсами», кнопка-магнит, огромное VEGA | `components/Booking.jsx` |
 
-If you are developing a production application, we recommend using TypeScript with type-aware lint rules enabled. Check out the [TS template](https://github.com/vitejs/vite/tree/main/packages/create-vite/template-react-ts) for information on how to integrate TypeScript and Oxlint's TypeScript related rules in your project.
+Над элементами с атрибутом `data-cursor="…"` курсор превращается в большой круг с надписью.
+Форма пока ничего не отправляет — подключается к любому сервису форм (Formspree, Netlify Forms и т.п.).
+Для посетителей, у которых в системе отключена анимация, сайт показывается без движения.
+
+## Команды
+
+```bash
+npm install     # один раз
+npm run dev     # открыть локально
+npm run build   # собрать для публикации
+```

@@ -1,0 +1,143 @@
+.studio {
+  padding: clamp(80px, 10vw, 150px) var(--pad);
+  overflow: hidden;
+}
+
+.studio__head {
+  display: flex;
+  justify-content: space-between;
+  gap: 30px;
+}
+
+.studio__head p {
+  max-width: 340px;
+  font-size: 15px;
+  line-height: 1.55;
+  color: var(--muted-dark);
+}
+
+.studio__titlerow {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-end;
+  gap: 30px;
+  margin-top: 30px;
+}
+
+.studio__title {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0 0.22em;
+  font-size: clamp(70px, 11vw, 210px);
+}
+
+.studio__mask {
+  display: block;
+  overflow: hidden;
+  padding-top: 0.05em;
+}
+
+.studio__word {
+  display: inline-block;
+}
+
+.studio__word.is-hot {
+  color: var(--hot);
+}
+
+.studio__based {
+  display: grid;
+  justify-items: end;
+  gap: 6px;
+  padding-bottom: 14px;
+}
+
+.studio__based strong {
+  font-size: clamp(30px, 3vw, 52px);
+  font-weight: 400;
+}
+
+.studio__video {
+  position: relative;
+  overflow: hidden;
+  margin-top: clamp(40px, 5vw, 70px);
+  aspect-ratio: 16 / 8;
+  border-radius: 10px;
+}
+
+.studio__video video {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.studio__video span {
+  position: absolute;
+  left: 18px;
+  bottom: 16px;
+  color: var(--light);
+}
+
+.studio__photos {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: clamp(14px, 2vw, 28px);
+  margin-top: clamp(40px, 5vw, 70px);
+}
+
+.studio__photo {
+  display: grid;
+  gap: 12px;
+}
+
+.studio__photo-img {
+  overflow: hidden;
+  aspect-ratio: 4 / 3;
+  border-radius: 6px;
+  box-shadow: 0 30px 60px rgba(20, 16, 18, 0.18);
+}
+
+.studio__photo-img img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  transition: transform 0.9s var(--ease);
+}
+
+.studio__photo:hover img {
+  transform: scale(1.06);
+}
+
+.studio__photo figcaption {
+  display: flex;
+  gap: 14px;
+  font-size: 15px;
+}
+
+.studio__photo .small {
+  color: var(--hot);
+}
+
+@media (max-width: 860px) {
+  .studio__head,
+  .studio__titlerow {
+    flex-direction: column;
+    align-items: flex-start;
+  }
+
+  .studio__title {
+    font-size: 17vw;
+  }
+
+  .studio__based {
+    justify-items: start;
+  }
+
+  .studio__video {
+    aspect-ratio: 4 / 5;
+  }
+
+  .studio__photos {
+    grid-template-columns: 1fr;
+  }
+}
