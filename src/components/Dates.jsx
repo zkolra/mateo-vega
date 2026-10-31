@@ -29,8 +29,8 @@ function Dates() {
       const ry = gsap.quickTo(photo.current, "rotationX", { duration: 0.8, ease: "power3" });
       const move = (e) => {
         const b = root.current.getBoundingClientRect();
-        rx(((e.clientX - b.left) / b.width - 0.5) * 14);
-        ry(-((e.clientY - b.top) / b.height - 0.5) * 10);
+        rx(((e.clientX - b.left) / b.width - 0.5) * 6);
+        ry(-((e.clientY - b.top) / b.height - 0.5) * 4);
       };
       root.current.addEventListener("pointermove", move);
       return () => root.current?.removeEventListener("pointermove", move);
@@ -46,11 +46,11 @@ function Dates() {
         </span>
         <p className="js-fade">{dates.text}</p>
       </div>
-      <h2 className="dates__title display js-lines">
-        <Lines text={dates.title.join("\n")} />
-      </h2>
-
       <div className="dates__grid">
+        <div className="dates__left">
+        <h2 className="dates__title display js-lines">
+          <Lines text={dates.title.join("\n")} />
+        </h2>
         <ul className="dates__list">
           {dates.items.map((d) => (
             <li className="date" key={d.city + d.date}>
@@ -73,6 +73,7 @@ function Dates() {
             </li>
           ))}
         </ul>
+        </div>
         <div className="dates__photo-wrap">
           <figure className="dates__photo" ref={photo}>
             <img src={dates.image} alt="" loading="lazy" />

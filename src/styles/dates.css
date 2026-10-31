@@ -17,7 +17,7 @@
 }
 
 .dates__title {
-  margin-top: 30px;
+  margin-bottom: clamp(30px, 4vw, 60px);
   font-size: clamp(70px, 11vw, 210px);
 }
 
@@ -31,7 +31,7 @@
   align-items: stretch; /* фото ровно по высоте списка дат */
   grid-template-columns: 1.5fr 1fr;
   gap: clamp(30px, 5vw, 80px);
-  margin-top: clamp(40px, 6vw, 80px);
+  margin-top: 30px;
 }
 
 .dates__list {
@@ -117,8 +117,10 @@
   color: var(--hot);
 }
 
+/* фото: от верха заголовка до последнего города */
 .dates__photo-wrap {
   perspective: 1000px;
+  height: 100%;
 }
 
 .dates__photo {
