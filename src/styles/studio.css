@@ -13,7 +13,7 @@
   max-width: 340px;
   font-size: 15px;
   line-height: 1.55;
-  color: var(--muted-dark);
+  color: var(--muted);
 }
 
 .studio__titlerow {
@@ -94,7 +94,7 @@
   overflow: hidden;
   aspect-ratio: 4 / 3;
   border-radius: 6px;
-  box-shadow: 0 30px 60px rgba(20, 16, 18, 0.18);
+  box-shadow: 0 30px 60px rgba(0, 0, 0, 0.35);
 }
 
 .studio__photo-img img {

@@ -11,8 +11,13 @@
   --dark: #141012; /* текст на светлом */
   --muted-dark: rgba(20, 16, 18, 0.6);
   --line-dark: rgba(20, 16, 18, 0.14);
-  --hot: #ff2f3d; /* фирменный красный — «огонь сцены» */
-  --violet: #8b3dff; /* свет прожекторов */
+  --hot: #b3162c; /* фирменный красный — глубокий, «бархат сцены» */
+  /* светлая часть сайта — кэмп: цвет яичной скорлупы */
+  --egg: #ebe6dd;
+  --egg-2: #e1dbd0;
+  --stone: #2b2825;
+  --stone-muted: rgba(43, 40, 37, 0.6);
+  --stone-line: rgba(43, 40, 37, 0.14);
 
   --display: "Anton", Impact, sans-serif;
   --sans: "Space Grotesk Variable", "Space Grotesk", system-ui, sans-serif;
@@ -219,35 +224,6 @@ html.no-scroll {
 @keyframes beat {
   0% { transform: translate(-50%, -50%) scale(0.5); opacity: 0.9; }
   100% { transform: translate(-50%, -50%) scale(1.6); opacity: 0; }
-}
-
-.cursor__label {
-  position: absolute;
-  left: 50%;
-  top: 50%;
-  transform: translate(-50%, -50%);
-  font-size: 11px;
-  font-weight: 600;
-  letter-spacing: 0.14em;
-  text-transform: uppercase;
-  color: var(--light);
-  white-space: nowrap;
-  opacity: 0;
-  transition: opacity 0.3s;
-}
-
-.cursor.is-big .cursor__dot {
-  width: 96px;
-  height: 96px;
-}
-
-.cursor.is-big .cursor__label {
-  opacity: 1;
-}
-
-.cursor.is-big .cursor__beat {
-  animation: none;
-  opacity: 0;
 }
 
 .cursor.is-hot .cursor__dot {

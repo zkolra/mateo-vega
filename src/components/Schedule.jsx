@@ -21,7 +21,7 @@ function Schedule() {
   }, []);
 
   return (
-    <section className="schedule is-sand" id="schedule" ref={root}>
+    <section className="schedule" id="schedule" ref={root}>
       <div className="schedule__head">
         <span className="label">
           <b>06</b> / {schedule.label}

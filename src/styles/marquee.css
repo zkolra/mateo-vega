@@ -8,14 +8,14 @@
 .mq__band {
   overflow: hidden;
   padding: 14px 0 10px;
-  background: var(--hot);
-  color: var(--light);
+  background: var(--light);
+  color: var(--night);
   transform: rotate(-3deg) scale(1.05);
 }
 
 .mq__band--light {
   margin-top: -20px;
-  background: var(--light);
+  background: #ddd6cc;
   color: var(--night);
   transform: rotate(2deg) scale(1.05);
 }
@@ -28,7 +28,7 @@
 }
 
 .mq__track span {
-  padding-right: 0.5em;
+  padding-right: 0.8em;
   white-space: nowrap;
 }
 

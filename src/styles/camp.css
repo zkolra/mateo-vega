@@ -1,5 +1,11 @@
+/* Кэмп: цвет яичной скорлупы, тёмно-каменный текст, без красного */
 .camp {
-  background: var(--night);
+  background: var(--egg);
+  color: var(--stone);
+}
+
+.camp .label b {
+  color: var(--stone-muted);
 }
 
 .camp__stage {
@@ -15,26 +21,28 @@
   position: absolute;
   inset: 0;
   overflow: hidden;
-  clip-path: inset(22% 30% 22% 30% round 400px);
+  clip-path: inset(18% 33% 18% 33% round 600px);
 }
 
 .camp__window img {
   width: 100%;
   height: 100%;
   object-fit: cover;
+  object-position: 50% 28%;
 }
 
 .camp__shade {
   position: absolute;
   inset: 0;
-  background: rgba(12, 10, 11, 0.5);
-  opacity: 0.6;
+  background: linear-gradient(180deg, rgba(43, 40, 37, 0.15), rgba(43, 40, 37, 0.45));
+  opacity: 0;
 }
 
 .camp__label {
   position: absolute;
   top: 96px;
   left: var(--pad);
+  z-index: 2;
 }
 
 .camp__title {
@@ -44,53 +52,145 @@
   font-size: clamp(80px, 12vw, 230px);
   text-align: center;
   pointer-events: none;
-  text-shadow: 0 10px 60px rgba(0, 0, 0, 0.35);
-}
-
-.camp__line.is-hot {
-  color: var(--hot);
-}
-
-.camp__moments {
-  position: relative;
-  display: grid;
-  grid-template-columns: repeat(12, 1fr);
-  gap: 20px;
-  padding: clamp(60px, 8vw, 120px) var(--pad) clamp(100px, 12vw, 200px);
 }
 
 .camp__intro {
-  grid-column: 1 / 6;
-  font-size: clamp(22px, 2.2vw, 34px);
-  line-height: 1.3;
+  max-width: 980px;
+  padding: clamp(80px, 10vw, 150px) var(--pad) clamp(50px, 6vw, 90px);
+  font-size: clamp(26px, 3.2vw, 52px);
+  font-weight: 300;
+  line-height: 1.15;
+  letter-spacing: -0.02em;
 }
 
-.moment {
+/* ---------- День на кэмпе ---------- */
+
+.day {
+  display: grid;
+  grid-template-columns: 1.25fr 1fr;
+  gap: clamp(30px, 5vw, 80px);
+  padding: 0 var(--pad) clamp(60px, 8vw, 120px);
+}
+
+.day__media {
+  position: sticky;
+  top: 12vh;
+  height: 76vh;
+  overflow: hidden;
+  border-radius: 8px;
+  background: var(--egg-2);
+}
+
+.day__media video {
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  opacity: 0;
+  transform: scale(1.06);
+  transition: opacity 0.9s var(--ease), transform 1.4s var(--ease);
+}
+
+.day__media video.is-on {
+  opacity: 1;
+  transform: none;
+}
+
+.day__now {
+  position: absolute;
+  left: 16px;
+  bottom: 16px;
+  padding: 9px 14px;
+  border-radius: 100px;
+  background: var(--egg);
+  color: var(--stone);
+}
+
+.day__steps {
+  list-style: none;
+}
+
+.day__head {
+  padding: 10px 0 30px;
+}
+
+.day__step {
+  display: grid;
+  align-content: center;
+  gap: 14px;
+  min-height: 62vh;
+  border-top: 1px solid var(--stone-line);
+  opacity: 0.32;
+  transition: opacity 0.6s var(--ease);
+}
+
+.day__step.is-on {
+  opacity: 1;
+}
+
+.day__time {
+  font-size: clamp(60px, 6vw, 110px);
+  font-variant-numeric: tabular-nums;
+}
+
+.day__step h3 {
+  font-size: clamp(24px, 2.2vw, 34px);
+  font-weight: 500;
+}
+
+.day__step p {
+  max-width: 400px;
+  font-size: 16px;
+  line-height: 1.6;
+  color: var(--stone-muted);
+}
+
+.day__mobile {
+  display: none;
+}
+
+/* ---------- Цитата и портреты ---------- */
+
+.people {
+  display: grid;
+  grid-template-columns: 1fr 1.3fr 1fr;
+  align-items: center;
+  gap: clamp(20px, 4vw, 60px);
+  padding: clamp(60px, 8vw, 120px) var(--pad) clamp(120px, 14vw, 220px);
+}
+
+.people__img {
   display: grid;
   gap: 12px;
 }
 
-.moment img {
+.people__img img {
   width: 100%;
-  border-radius: 6px;
-  aspect-ratio: 4 / 5;
+  aspect-ratio: 3 / 4;
   object-fit: cover;
+  border-radius: 8px;
 }
 
-.moment figcaption {
-  color: var(--muted);
+.people__img figcaption {
+  color: var(--stone-muted);
 }
 
-.moment--1 { grid-column: 7 / 11; }
-.moment--2 { grid-column: 2 / 6; margin-top: 4vw; }
-.moment--3 { grid-column: 7 / 12; margin-top: 10vw; }
-.moment--3 img { aspect-ratio: 4 / 3; }
+.people__quote {
+  font-family: var(--display);
+  font-size: clamp(44px, 5vw, 92px);
+  line-height: 0.95;
+  text-align: center;
+  text-transform: uppercase;
+}
+
+/* ---------- Следующий кэмп ---------- */
 
 .next {
   display: grid;
   grid-template-columns: 1fr 1fr;
   min-height: 100vh;
-  background: var(--hot);
+  background: var(--egg-2);
 }
 
 .next__photo {
@@ -101,6 +201,7 @@
   width: 100%;
   height: 100%;
   object-fit: cover;
+  object-position: 50% 30%;
 }
 
 .next__info {
@@ -108,13 +209,16 @@
   flex-direction: column;
   justify-content: center;
   align-items: flex-start;
-  gap: 26px;
+  gap: 24px;
   padding: 80px clamp(24px, 5vw, 90px);
 }
 
 .next__info .label b {
-  color: var(--light);
-  animation: today-blink 1.2s steps(2, start) infinite;
+  animation: blink 1.4s steps(2, start) infinite;
+}
+
+@keyframes blink {
+  to { opacity: 0.25; }
 }
 
 .next__date {
@@ -125,13 +229,26 @@
   font-size: 18px;
 }
 
+.next__facts {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px;
+  list-style: none;
+}
+
+.next__facts li {
+  padding: 8px 14px;
+  border: 1px solid var(--stone-line);
+  border-radius: 100px;
+}
+
 .next__count {
   display: grid;
   grid-template-columns: repeat(4, auto);
   gap: clamp(16px, 2.6vw, 40px);
   padding: 22px 0;
-  border-top: 1px solid rgba(244, 238, 230, 0.4);
-  border-bottom: 1px solid rgba(244, 238, 230, 0.4);
+  border-top: 1px solid var(--stone-line);
+  border-bottom: 1px solid var(--stone-line);
 }
 
 .next__count div {
@@ -145,32 +262,64 @@
   font-variant-numeric: tabular-nums;
 }
 
-.next .pill--hot {
-  background: var(--night);
-  border-color: var(--night);
+.next__count .small {
+  color: var(--stone-muted);
 }
 
-@keyframes today-blink {
-  to { opacity: 0.3; }
+.pill--stone {
+  background: var(--stone);
+  border-color: var(--stone);
+  color: var(--egg);
+}
+
+.pill--stone::before {
+  background: var(--egg);
+}
+
+.pill--stone:hover {
+  color: var(--stone);
+  border-color: var(--stone);
 }
 
 @media (max-width: 860px) {
   .camp__window {
-    clip-path: inset(25% 12% 25% 12% round 300px);
+    clip-path: inset(24% 12% 24% 12% round 400px);
   }
 
   .camp__title {
-    font-size: 17vw;
+    font-size: 15vw;
   }
 
-  .camp__moments {
+  .day {
     grid-template-columns: 1fr;
   }
 
-  .camp__intro,
-  .moment {
-    grid-column: 1 !important;
-    margin-top: 0 !important;
+  .day__media {
+    display: none;
+  }
+
+  .day__step {
+    min-height: 0;
+    padding: 30px 0;
+    opacity: 1;
+  }
+
+  .day__mobile {
+    display: block;
+    width: 100%;
+    aspect-ratio: 3 / 2;
+    object-fit: cover;
+    border-radius: 8px;
+  }
+
+  .people {
+    grid-template-columns: 1fr 1fr;
+  }
+
+  .people__quote {
+    grid-column: 1 / -1;
+    grid-row: 1;
+    font-size: 11vw;
   }
 
   .next {

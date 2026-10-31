@@ -4,7 +4,7 @@ import { artist, nav } from "../content";
 import "../styles/header.css";
 
 /* Шапка: прячется при прокрутке вниз, возвращается вверх.
-   Над светлыми блоками (.is-sand) текст тёмный. На телефоне — меню на весь экран. */
+   Над светлыми блоками (.is-egg, кэмп) текст тёмный. На телефоне — меню на весь экран. */
 function Header() {
   const bar = useRef(null);
   const overlay = useRef(null);
@@ -23,7 +23,7 @@ function Header() {
     const check = () => {
       raf = 0;
       const el = document.elementFromPoint(window.innerWidth / 2, 44);
-      bar.current?.classList.toggle("is-dark", !!el?.closest?.(".is-sand"));
+      bar.current?.classList.toggle("is-dark", !!el?.closest?.(".is-egg"));
     };
     const onScroll = () => (raf ||= requestAnimationFrame(check));
     window.addEventListener("scroll", onScroll, { passive: true });

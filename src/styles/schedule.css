@@ -1,6 +1,6 @@
 .schedule {
   padding: clamp(40px, 6vw, 90px) var(--pad) clamp(80px, 10vw, 150px);
-  border-top: 1px solid var(--line-dark);
+  border-top: 1px solid var(--line);
 }
 
 .schedule__head {
@@ -13,7 +13,7 @@
   max-width: 340px;
   font-size: 15px;
   line-height: 1.55;
-  color: var(--muted-dark);
+  color: var(--muted);
 }
 
 .schedule__title {
@@ -28,7 +28,7 @@
 .schedule__list {
   margin-top: clamp(40px, 5vw, 70px);
   list-style: none;
-  border-top: 1px solid var(--line-dark);
+  border-top: 1px solid var(--line);
 }
 
 .slot {
@@ -38,7 +38,7 @@
   align-items: center;
   gap: 20px;
   padding: 20px 0;
-  border-bottom: 1px solid var(--line-dark);
+  border-bottom: 1px solid var(--line);
   isolation: isolate;
   transition: color 0.35s, padding 0.5s var(--ease);
 }
@@ -48,7 +48,7 @@
   position: absolute;
   inset: 0 calc(var(--pad) * -1);
   z-index: -1;
-  background: var(--dark);
+  background: var(--night-2);
   transform: scaleX(0);
   transform-origin: left;
   transition: transform 0.6s var(--ease);
@@ -107,7 +107,7 @@
   max-width: 380px;
   font-size: 14px;
   line-height: 1.55;
-  color: var(--muted-dark);
+  color: var(--muted);
 }
 
 @media (max-width: 860px) {

@@ -38,7 +38,7 @@ function Studio() {
   }, []);
 
   return (
-    <section className="studio is-sand" id="classes" ref={root}>
+    <section className="studio" id="classes" ref={root}>
       <div className="studio__head">
         <span className="label">
           <b>05</b> / {studio.label}
@@ -60,7 +60,7 @@ function Studio() {
         </div>
       </div>
 
-      <div className="studio__video" data-cursor="Class">
+      <div className="studio__video">
         <video src={studio.video} poster={studio.poster} autoPlay muted loop playsInline preload="metadata" />
         <span className="small">Mateo Vega Studio / Class in motion</span>
       </div>

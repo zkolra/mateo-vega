@@ -2,10 +2,9 @@ import { useLayoutEffect, useRef } from "react";
 import { gsap } from "../lib/motion";
 
 /* Красная точка с кольцом, которое пульсирует в такт (100 ударов в минуту).
-   Над ссылками точка растёт, над элементами с data-cursor="…" — большой круг с надписью. */
+   Над ссылками и кнопками точка растёт. */
 function Cursor() {
   const root = useRef(null);
-  const label = useRef(null);
 
   useLayoutEffect(() => {
     const mm = gsap.matchMedia();
@@ -15,10 +14,7 @@ function Cursor() {
       const y = gsap.quickTo(el, "y", { duration: 0.25, ease: "power3" });
       let last = { x: -100, y: -100 };
       const update = (t) => {
-        const big = t?.closest?.("[data-cursor]");
-        el.classList.toggle("is-big", !!big);
-        el.classList.toggle("is-hot", !big && !!t?.closest?.("a, button, input, textarea"));
-        if (big && label.current) label.current.textContent = big.dataset.cursor;
+        el.classList.toggle("is-hot", !!t?.closest?.("a, button, input, textarea"));
       };
       const move = (e) => {
         last = { x: e.clientX, y: e.clientY };
@@ -42,7 +38,6 @@ function Cursor() {
     <div className="cursor" ref={root} aria-hidden="true">
       <span className="cursor__beat" />
       <span className="cursor__dot" />
-      <span className="cursor__label" ref={label} />
     </div>
   );
 }

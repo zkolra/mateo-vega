@@ -68,7 +68,7 @@ export const marquee = ["Salsa", "Mambo", "On2", "Shines", "Partnerwork", "Music
 export const intro = {
   label: "The Artist",
   title: ["Rhythm is where", "it all starts"],
-  image: pic("artist-intro.webp"),
+  image: pic("artist-portrait.webp"),
   text: [
     "Mateo Vega is a Latin dancer, choreographer and teacher rooted in Salsa and Mambo.",
     "From international stages and festivals to regular classes and movement camps, his work connects performance, musicality and social dance.",
@@ -110,7 +110,7 @@ export const dates = {
   label: "On the road",
   title: ["Upcoming", "dates"],
   text: "Meet Mateo at festivals, congresses and dance events around the world.",
-  image: pic("festival-dates.webp"),
+  image: pic("artist-backstage.webp"),
   items: [
     { date: "18–20 Oct", city: "Paris", country: "France", event: "Paris Mambo Weekend", type: "Shows / Workshops" },
     { date: "08–10 Nov", city: "Berlin", country: "Germany", event: "Berlin Salsa Congress", type: "Shows / Workshops" },
@@ -152,27 +152,35 @@ export const schedule = {
   ],
 };
 
-/* ---------- 8. Кэмп ----------
-   Для фото кэмпа положите в src/assets файлы camp-*.webp (имена ниже) —
-   пока их нет, показываются запасные фото. */
+/* ---------- 8. Кэмп (светлая часть сайта, цвет яичной скорлупы) ----------
+   day — «день на кэмпе»: видео сменяют друг друга при прокрутке.
+   Видео лежат в public/videos/, фото — в src/assets/. */
 
 export const camp = {
   label: "Vega Movement Camp",
   title: ["Move", "beyond", "the studio."],
-  intro: "A few days of movement, music, nature, food, conversation and dancing together.",
-  hero: pic("camp-hero.webp", "artist-backstage.webp"),
-  moments: [
-    { image: pic("camp-morning.webp", "class-02.webp"), caption: "Morning movement" },
-    { image: pic("camp-circle.webp", "class-03.webp"), caption: "Circle / grass" },
-    { image: pic("camp-evening.webp", "performance-couple.webp"), caption: "Camp evening" },
+  hero: pic("camp-hero.webp"),
+  intro: "A few days of movement, music, nature, food, conversation — and dancing together until the stars come out.",
+  dayLabel: "A day at camp",
+  day: [
+    { time: "08:00", title: "Morning movement", text: "Barefoot on the grass under the olive trees: mobility, body rhythm and the first shines of the day.", video: "/videos/camp-morning.mp4", poster: pic("camp-morning.webp") },
+    { time: "11:30", title: "Circle & conversation", text: "We sit together and talk about music, connection and what it means to really listen to a partner.", video: "/videos/camp-circle.mp4", poster: pic("camp-circle.webp") },
+    { time: "14:00", title: "The long table", text: "Slow lunches in the shade with local food, long conversations and plenty of laughter.", video: "/videos/camp-dinner.mp4", poster: pic("camp-dinner.webp") },
+    { time: "20:00", title: "Sunset social", text: "Lights in the trees, the hills turning pink — and everyone dancing what they learned that day.", video: "/videos/camp-evening.mp4", poster: pic("camp-evening.webp") },
+  ],
+  quote: "Dance is how we listen to each other.",
+  people: [
+    { image: pic("camp-teaching.webp"), caption: "Partnerwork in the park" },
+    { image: pic("camp-portrait-2.webp"), caption: "Golden hour" },
   ],
   next: {
     label: "Next camp",
     date: "2027-06-18", // дата начала — по ней идёт обратный отсчёт
     title: ["June", "18—22"],
     place: "Spain · Summer 2027",
+    facts: ["5 days", "20 dancers", "All levels"],
     button: "Discover the camp",
-    image: pic("camp-portrait.webp", "festival-dates.webp"),
+    image: pic("camp-portrait.webp"),
   },
 };
 

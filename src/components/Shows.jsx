@@ -70,7 +70,7 @@ function Shows() {
         </div>
 
         {shows.items.map((s, i) => (
-          <article className="show" key={s.title} data-cursor="Show">
+          <article className="show" key={s.title}>
             <figure className="show__media">
               <img src={s.image} alt={s.title} loading="lazy" />
               <span className="show__num display">0{i + 1}</span>

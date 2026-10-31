@@ -34,7 +34,7 @@ function Showreel() {
         <span className="reel__word reel__word--l">{w1}</span>
         <span className="reel__word reel__word--r">{w2}</span>
       </div>
-      <div className="reel__frame" data-cursor="Showreel">
+      <div className="reel__frame">
         <video className="reel__video" src={showreel.video} poster={showreel.poster} autoPlay muted loop playsInline preload="metadata" />
         <div className="reel__shade" />
       </div>

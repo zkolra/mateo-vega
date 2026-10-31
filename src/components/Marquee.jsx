@@ -52,7 +52,7 @@ function Marquee() {
           <div className="mq__track display">
             {[...words, ...words].map((w, i) => (
               <span key={i}>
-                {w} <i>✦</i>
+                {w}
               </span>
             ))}
           </div>

@@ -47,7 +47,7 @@ function Intro() {
       </h2>
 
       <div className="intro__grid">
-        <figure className="intro__media" data-cursor="Mateo">
+        <figure className="intro__media">
           <img src={intro.image} alt="" loading="lazy" />
         </figure>
         <div className="intro__copy">
